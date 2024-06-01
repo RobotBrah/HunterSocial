@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .post-form {
+            width: 500px;
+            margin-bottom: 20px;
+        }
+        .post-form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .post-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .post-container {
+            width: 500px;
+        }
+        .post {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .post p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="post-form">
+        <textarea id="postContent" placeholder="What's on your mind?"></textarea>
+        <button onclick="addPost()">Post</button>
+    </div>
+
+    <div id="postFeed" class="post-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            loadPosts();
+        });
+
+        function loadPosts() {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            const postFeed = document.getElementById('postFeed');
+            posts.forEach(post => {
+                const newPost = document.createElement('div');
+                newPost.className = 'post';
+                newPost.innerHTML = `<p>${post}</p>`;
+                postFeed.appendChild(newPost);
+            });
+        }
+
+        function addPost() {
+            const content = document.getElementById('postContent').value;
+            if (content.trim() !== "") {
+                const posts = JSON.parse(localStorage.getItem('posts')) || [];
+                posts.unshift(content);
+                localStorage.setItem('posts', JSON.stringify(posts));
+
+                const postFeed = document.getElementById('postFeed');
+                const newPost = document.createElement('div');
+                newPost.className = 'post';
+                newPost.innerHTML = `<p>${content}</p>`;
+                postFeed.insertBefore(newPost, postFeed.firstChild);
+
+                document.getElementById('postContent').value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>

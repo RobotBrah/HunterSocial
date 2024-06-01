@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ReevesSocial</title>
+    <style>
+        .question {
+            display: inline-block;
+            margin-right: 100px;
+            margin-bottom: 50px;
+            border-style: solid;
+            padding-right: 100px;
+            padding-bottom: 30px;
+            padding-left: 50px;
+            border-color: rgb(32, 26, 26);
+            border-width: 2px;
+            font-style: Arial;
+            background-color: rgba(3, 3, 3, 0.151);
+        }
+
+        .Profiles1 {
+            width: 200px;
+            height: 300px;
+            display: inline-block;
+            margin-top: 0px;
+        }
+
+        .header {
+            background-image: url("tone.jpg");
+            height: 100px;
+            color: rgb(255, 255, 255);
+            
+            text-align: center;
+            border-width: 10px;
+            border-style: solid;
+            font-size: 30px;
+        }
+
+        .feed-post {
+            width: 150px;
+            height: 80px;
+        }
+
+        .feed-post:hover {
+            background-color: rgb(224, 228, 231);
+            transition-duration: 1s;
+        }
+
+        .button1 {
+            font-style: Arial;
+            border-radius: 20px;
+            border-style: solid;
+            width: 80px;
+            height: 50px;
+            background-color: blue;
+            color: white;
+            font-weight: bolder;
+        }
+
+        .button1:hover {
+            background-color: rgba(32, 32, 223, 0.842);
+            cursor: pointer;
+        }
+
+        .profile-colum {
+            display: inline-block;
+        }
+
+        .post-container {
+            width: 900px;
+            height: 1000px;
+            display: inline-block;
+            vertical-align: top;
+            box-shadow: 12px 20px 20px;
+            border-width: 5px;
+            border-style: solid;
+            margin-top: 40px;
+            margin-left: 75px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-left: 100px;
+            width: 600px; /* Adjusted width to fit 4 buttons comfortably */
+        }
+
+        .nav-button {
+            height: 50px;
+            width: 150px;
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            border-style: solid;
+            text-align: center;
+            line-height: 50px; /* Vertically center text */
+            cursor: pointer;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(32, 32, 223, 0.842);
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="header">
+    <p class="header-title">Reeves Social</p>
+</h1>
+
+<hr>
+
+
+
+
+<div class="button-container">
+    <div class="nav-button" onclick="alert('You\'re already on the home page')">Home</div>
+    <div class="nav-button" onclick="window.location.href='bankAccount.html';">Bank Account</div>
+    <div class="nav-button" onclick="window.location.href='Gold.mine.html';">Mine Gold</div>
+    <div class="nav-button" onclick="window.location.href='profile.html';">Profile</div>
+</div>
+
+<hr>
+
+<div class="profile-grid">
+    <div class="feed">
+        <p>What's on your mind, reevesling?</p>
+        <input class="feed-post" type="text" placeholder="Write a post">
+        <button class="button1">Send</button>
+    </div>
+
+    <div class="post-container"> posts </div>
+</div>
+
+
+
+
+
+
+<script>
+
+
+
+</script>
+
+
+
+</body>
+</html>

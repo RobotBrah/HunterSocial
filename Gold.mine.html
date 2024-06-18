@@ -10,38 +10,64 @@
     </style>
 </head>
 <body>
-    <button onclick="window.location.href='MySite.html';">Home</button>
-    <h1>Dig Dig Dig a hole +$5000</h1>
+    <button onclick="window.location.href='Home.html';">Home</button>
+    <h1>Dig Dig Dig a hole +$1</h1>
+    
+    bankAccount = <div class="bankAccount"></div>
 
-    <button class="button" onclick="mine()">
-        MINE
-    </button>
+    MineLevel = <div class="mineLevel"></div>
 
-    <p id="account">Account: $0</p>
+    <button class="button" onclick="
+    mineAdd()
+                            ">MINE </button>
 
-    <script>
-        let accountBalance = 0;
 
-        function loadAccountBalance() {
-            const savedBalance = localStorage.getItem('accountBalance');
-            if (savedBalance !== null) {
-                accountBalance = parseInt(savedBalance, 10);
-                document.getElementById('account').innerText = 'Account: $' + accountBalance;
-            }
+    <button   onclick="
+    upgradeMine() 
+    
+    ">  Upgrade </button>
+
+
+
+
+<script>
+    //localStorage.clear()
+
+
+   let bankAccount = JSON.parse(localStorage.getItem('bankAccount')); 
+
+    var upgradValue = JSON.parse(localStorage.getItem('upgradValue')) ; 
+
+    
+   
+    function mineAdd () {
+        document.querySelector('.bankAccount').innerHTML = bankAccount += 1; if (upgradValue === true) {
+            document.querySelector('.bankAccount').innerHTML = bankAccount += upgradValue;
         }
+        localStorage.setItem('bankAccount', JSON.stringify(bankAccount));
+    }
 
-        function saveAccountBalance() {
-            localStorage.setItem('accountBalance', accountBalance);
-        }
 
-        function mine() {
-            accountBalance += 1;
-            document.getElementById('account').innerText = 'Account: $' + accountBalance;
-            saveAccountBalance();
-        }
 
-        // Load the account balance when the page is loaded
-        window.onload = loadAccountBalance;
-    </script>
+
+
+    function upgradeMine () {
+
+if (bankAccount > 1000 && upgradValue === 1) {
+     bankAccount = bankAccount -1000 ; 
+     upgradValue = 2; 
+     localStorage.setItem('upgradValue', JSON.stringify(upgradValue));
+     alert('You have upgraded your mine which has cost $1000');
+} else if (upgradValue = 2) {
+    alert('You have already upgraded your Mine, next upgrade is at $5000')
+}
+
+    }
+    
+
+    document.querySelector('.mineLevel').innerHTML = upgradValue;
+
+    
+</script>
 </body>
 </html>

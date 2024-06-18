@@ -1,95 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles/belowheader.css">
     <title>Post Feed</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
             margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbars */
         }
-        .post-form {
-            width: 500px;
-            margin-bottom: 20px;
-        }
-        .post-form textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        .post-form button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #1877f2;
+        header {
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            background-color: black;
+            width: 100%;
+            height: 30px;
+            overflow: hidden; /* Hide the overflowing text */
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
         }
-        .post-container {
-            width: 500px;
+        .marquee {
+            display: inline-block;
+            position: absolute;
+            animation: marquee 20s linear infinite; /* Animation properties */
         }
-        .post {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        @keyframes marquee {
+            0% {
+                top: 0;
+                left: 100%;
+                transform: translateX(0);
+            }
+            25% {
+                top: 0;
+                left: 0;
+                transform: translateX(0);
+            }
+            50% {
+                top: 100%;
+                left: 0;
+                transform: translateY(-100%);
+            }
+            75% {
+                top: 100%;
+                left: 100%;
+                transform: translateY(-100%) translateX(-100%);
+            }
+            100% {
+                top: 0;
+                left: 100%;
+                transform: translateX(0);
+            }
         }
-        .post p {
-            margin: 0;
+        .profile_picture {
+            background-color: black;
+            width: 300px;
+            height: 300px;
+            position: relative; /* Just an example */
+            top: 50px;
+
+        }
+        .profile_info {
+            background-color: rgb(209, 109, 109);
+            width: 1000px;
+            height: 300px;
+            vertical-align: top;
+            position: relative; /* Just an example */
+            top: 50px;
+        
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="marquee">WORK IS IN PROCESS  </div>
+    </header>
 
-    <div class="post-form">
-        <textarea id="postContent" placeholder="What's on your mind?"></textarea>
-        <button onclick="addPost()">Post</button>
+    <button>Home</button>
+
+    <div class="profile_picture"     >
+        <img src="Anime.trump.jpg" class="PFP" > 
+        
+
+    </div>
+    
+    <div class="profile_info">
+        <p>@USER NAME _ TRUMP</p>
+
+        
+
+        <button>MESSAGE</button>
+        <button>FOLLOW</button>
+        
+        bankAccount = <div class="bankAccount"></div>
+        <p>friends list</p>
+        
+        <button>steal</button>
+
+
+
     </div>
 
-    <div id="postFeed" class="post-container"></div>
-
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            loadPosts();
-        });
 
-        function loadPosts() {
-            const posts = JSON.parse(localStorage.getItem('posts')) || [];
-            const postFeed = document.getElementById('postFeed');
-            posts.forEach(post => {
-                const newPost = document.createElement('div');
-                newPost.className = 'post';
-                newPost.innerHTML = `<p>${post}</p>`;
-                postFeed.appendChild(newPost);
-            });
-        }
+        let bankAccount = JSON.parse(localStorage.getItem('bankAccount'));  
 
-        function addPost() {
-            const content = document.getElementById('postContent').value;
-            if (content.trim() !== "") {
-                const posts = JSON.parse(localStorage.getItem('posts')) || [];
-                posts.unshift(content);
-                localStorage.setItem('posts', JSON.stringify(posts));
+        console.log(bankAccount)
 
-                const postFeed = document.getElementById('postFeed');
-                const newPost = document.createElement('div');
-                newPost.className = 'post';
-                newPost.innerHTML = `<p>${content}</p>`;
-                postFeed.insertBefore(newPost, postFeed.firstChild);
+        
 
-                document.getElementById('postContent').value = '';
-            }
-        }
+         document.querySelector('.bankAccount').innerHTML = bankAccount; 
+    
+
+
     </script>
-
 </body>
 </html>

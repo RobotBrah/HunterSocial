@@ -1,0 +1,148 @@
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+.profile-grid {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 850px;
+}
+
+.feed {
+    height: 100%;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: left;
+    top: 0px; 
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    box-shadow: 1px 3px 2px;
+    
+
+}
+
+.feed-post {
+    width: 300px;
+    height: 40px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.button1 {
+    font-family: Arial;
+    border-radius: 20px;
+    border-style: solid;
+    width: 80px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    font-weight: bolder;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: rgba(32, 32, 223, 0.842);
+}
+
+.post-container {
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 12px 20px 20px;
+    border-width: 5px;
+    border-style: solid;
+    margin-top: 40px;
+    padding: 20px;
+    position: relative;
+}
+
+
+
+/* image of trump on side menu */ 
+
+.button-image {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 0px 0px; /* Adjust padding as needed */
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-image {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    margin-right: 20px; /* Space between the image and text */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    border-radius: 20px;
+}
+
+/* image of trump on side menu */ 
+
+.right-feed{
+    height: 100%;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: right;
+    top: 0px; 
+    right: 0;
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    box-shadow: 1px 3px 2px;
+}
+
+.createPost{
+    background-color: lightblue;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+}
+
+
+.post-input{
+    border-radius: 10px;
+    width: 400px;
+    height: 100px;
+    margin-left: 100px;
+    font-size: 20px;
+    text-wrap: wrap;
+}
+
+.post-button{
+    color: white;
+    font-size: 20px;
+    background-color: rgb(0, 13, 255);
+    height: 30px;
+    width: 100px;
+    border-style: none;
+    border-radius: 10px;
+    
+    
+}
+
+
+.PFP{
+    width: 100%;
+    align-items: left;
+    top: 0px; 
+    left: 0px;
+}
